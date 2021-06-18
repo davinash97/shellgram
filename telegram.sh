@@ -5,10 +5,10 @@ source tools/telegram.functions
 # By DAvinash97 for Developers
 
 # Your Bot Token Here
-BOT_TOKEN="s"
+BOT_TOKEN=""
 
 # Your Chat ID Here
-CHAT_ID="s"
+CHAT_ID=""
 
 # Add Commands Here
 sendmessage "Telegram is Awesome"
