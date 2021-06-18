@@ -1,0 +1,44 @@
+#!/bin/bash
+# Telegram Script to Send File(s) or Message(s) into Your Chat/Channel
+# Just Make Sure To add the Bot in respective Chat/Channel
+# By DAvinash97 for Developers
+clear
+print() {
+    echo -e "\n\t${1}"
+}
+check() {
+    if [ ! ${BOT_TOKEN} ]; then
+        print "Provide Bot Token, Please...\n"
+        sleep 3
+        exit 0
+    elif [ ! ${CHAT_ID} ]; then
+        print "Provide Chat ID, Please...\n"
+        sleep 3
+        exit 0
+    else
+        ${1}
+    fi
+}
+sendmessage() {
+    check
+    if [[ ! ${1} ]]; then
+        print 'help: sendmessage "Testing"'
+    else
+        print "Sending '${1}' as Message"
+        curl https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID} -F text="${1}"
+    fi
+}
+
+senddocument() {
+    check
+    if [[ ! ${1} ]]; then
+        print 'help: senddocument "<Your Files Extension Here>" "<Caption here(Not Necessary)>"'
+    else
+        if [[ ! ${2} ]]; then
+            print "Sending Without Caption"
+            for i in *.${1}; do
+                curl https://api.telegram.org/bot${BOT_TOKEN}/sendDocument?chat_id=${CHAT_ID} -F document=@${i} -F caption="${2}"
+            done
+        fi
+    fi
+}
