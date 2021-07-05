@@ -7,13 +7,13 @@ Hey There! This Script is for Developers to release the Binaries to their Respec
 <li> Edit the <code>telegram.sh</code> file, And Paste your Bot's Token (Can be found <a href="https://t.me/BotFather">@BotFather</a>). Which is Similar to <code>123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11</code> copy that code and paste it in <code>BOT_TOKEN</code> variable.</li><br>
 <li> Get Your Chat's ID, Easiest way to do so is, Add group management bot like <a href="https://t.me/DAvinash97bot">@Ava</a> and do <code>/id</code> copy that number which should look like <code>-123456789</code> it can be more digits (Depends on your Group if it is SuperGroup) and paste that Code in <code>telegram.sh</code> in <code>CHAT_ID</code> variable. 
 <pre>
-    <b>It Should Now look like this</b></>
+    <b>It Should Now look like this</b>
         BOT_TOKEN="123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11"
         CHAT_ID="-123456789"
 </pre></li><br>
 <li> Now Choose if you want to Send Message or Send Document
 <pre>
-<b>You Need to do like these:</b>
+    <b>It Should Now look like this</b>
 </>
     <b>To Send Message do</b>
         <i>sendmessage "Telegram is awesome"</i>
