@@ -35,10 +35,11 @@ senddocument() {
         print 'help: senddocument "<Your Files Extension Here>" "<Caption here(Not Necessary)>"'
     else
         if [[ ! ${2} ]]; then
-            print "Sending Without Caption"
+            print "Sending Without Caption\n\n"
+        else print "${2}\n\n"
+        fi
             for i in *.${1}; do
                 curl https://api.telegram.org/bot${BOT_TOKEN}/sendDocument?chat_id=${CHAT_ID} -F document=@${i} -F caption="${2}"
             done
-        fi
     fi
 }
